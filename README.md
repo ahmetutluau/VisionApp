@@ -6,16 +6,16 @@ A Apple Vision Pro Virtual Reality application built using RealityKit.
 - SwiftUI
 
 ## Entry
-https://github.com/ahmetutluau/TMDB/assets/76450260/a62683a8-e97b-4d0b-9e05-3d1295192545
+![Entry-page](https://github.com/ahmetutluau/TMDB/assets/76450260/4e8dc460-6e99-4cbd-8838-4a5b313bed68)
 
 ## Council
-https://github.com/ahmetutluau/TMDB/assets/76450260/78086fee-5e04-433e-99a9-3dccd0134e9d
+![Council-page](https://github.com/ahmetutluau/TMDB/assets/76450260/0e68be23-f49a-4e37-934c-8852cdd8a563)
 
 ## Models
-https://github.com/ahmetutluau/TMDB/assets/76450260/a5597319-c104-492b-bc24-9398fe6c0f9d
+![Models-page](https://github.com/ahmetutluau/TMDB/assets/76450260/27d738fc-c853-4cb6-ad4d-d467aefeeb09)
 
 ## Earth Model
-https://github.com/ahmetutluau/TMDB/assets/76450260/6bfb54ee-ebe4-44da-bcce-0071bf04b1fd
+![earth-model](https://github.com/ahmetutluau/TMDB/assets/76450260/b21a5eca-c1e5-4c52-adf2-7c9d345c52e6)
 
 ## Roket Model
 ![roket-model](https://github.com/ahmetutluau/TMDB/assets/76450260/528a26b8-c03b-4386-9682-6cd2e3833253)
