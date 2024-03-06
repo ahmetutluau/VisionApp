@@ -18,4 +18,4 @@ https://github.com/ahmetutluau/TMDB/assets/76450260/a5597319-c104-492b-bc24-9398
 https://github.com/ahmetutluau/TMDB/assets/76450260/6bfb54ee-ebe4-44da-bcce-0071bf04b1fd
 
 ## Roket Model
-https://github.com/ahmetutluau/TMDB/assets/76450260/528a26b8-c03b-4386-9682-6cd2e3833253
+![roket-model](https://github.com/ahmetutluau/TMDB/assets/76450260/528a26b8-c03b-4386-9682-6cd2e3833253)
