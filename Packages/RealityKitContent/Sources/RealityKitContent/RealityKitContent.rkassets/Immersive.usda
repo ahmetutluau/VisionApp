@@ -7,44 +7,146 @@
 
 def Xform "Root"
 {
-    reorder nameChildren = ["Sphere_Left", "Sphere_Right", "GridMaterial"]
-    def Sphere "Sphere_Right" (
-        active = true
-        prepend apiSchemas = ["MaterialBindingAPI"]
-    )
-    {
-        rel material:binding = </Root/GridMaterial/GridMaterial> (
-            bindMaterialAs = "weakerThanDescendants"
-        )
-        double radius = 0.1
-        quatf xformOp:orient = (1, 0, 0, 0)
-        float3 xformOp:scale = (1, 1, 1)
-        float3 xformOp:translate = (0.5, 1.5, -1.5)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-    }
-
-    def Sphere "Sphere_Left" (
-        active = true
-        prepend apiSchemas = ["MaterialBindingAPI"]
-    )
-    {
-        rel material:binding = </Root/GridMaterial/GridMaterial> (
-            bindMaterialAs = "weakerThanDescendants"
-        )
-        double radius = 0.1
-        quatf xformOp:orient = (1, 0, 0, 0)
-        float3 xformOp:scale = (1, 1, 1)
-        float3 xformOp:translate = (-0.5, 1.5, -1.5)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
-    }
-
+    reorder nameChildren = ["GridMaterial", "RocketToy2", "ParticleEmitter"]
     def "GridMaterial" (
         active = true
-        prepend references = @Materials/GridMaterial.usda@
+        references = @Materials/GridMaterial.usda@
     )
     {
         float3 xformOp:scale = (1, 1, 1)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "GridMaterial"
+        {
+            float2 ui:nodegraph:realitykit:subgraphOutputs:size = (182, 99)
+
+            over "MaterialXPreviewSurface"
+            {
+                float2 ui:nodegraph:node:size = (208, 307)
+            }
+
+            over "Remap"
+            {
+                float2 ui:nodegraph:node:size = (95, 181)
+            }
+
+            over "Fractional"
+            {
+                float2 ui:nodegraph:node:size = (155, 109)
+            }
+
+            over "Multiply"
+            {
+                float2 ui:nodegraph:node:size = (61, 36)
+            }
+
+            over "Combine3"
+            {
+                float2 ui:nodegraph:node:size = (146, 54)
+            }
+
+            over "Subtract"
+            {
+                float2 ui:nodegraph:node:size = (63, 36)
+            }
+
+            over "Absval"
+            {
+                float2 ui:nodegraph:node:size = (123, 53)
+            }
+
+            over "BaseColor"
+            {
+                float2 ui:nodegraph:node:size = (151, 53)
+            }
+
+            over "LineColor"
+            {
+                float2 ui:nodegraph:node:size = (151, 53)
+            }
+
+            over "Texcoord"
+            {
+                float2 ui:nodegraph:node:size = (182, 53)
+            }
+
+            over "LineCounts"
+            {
+                float2 ui:nodegraph:node:size = (153, 53)
+            }
+
+            over "LineWidths"
+            {
+                float2 ui:nodegraph:node:size = (151, 53)
+            }
+
+            over "Separate2"
+            {
+                float2 ui:nodegraph:node:size = (116, 127)
+            }
+
+            over "Min"
+            {
+                float2 ui:nodegraph:node:size = (114, 40)
+            }
+
+            over "Range"
+            {
+                float2 ui:nodegraph:node:size = (98, 217)
+            }
+        }
+    }
+
+    def "RocketToy2" (
+        active = true
+        references = @RocketToy2.usdz@
+    )
+    {
+        reorder nameChildren = ["geom", "ParticleEmitter"]
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0.15, 0.11764963, -0.35)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Xform "ParticleEmitter"
+        {
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (0.4, 0.4, 0.4)
+            float3 xformOp:translate = (0.0075157583, -0.013723001, 0.0035639703)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def RealityKitComponent "VFXEmitter"
+            {
+                token info:id = "RealityKit.VFXEmitter"
+
+                def RealityKitStruct "currentState"
+                {
+                    token birthDirection = "Local"
+                    int64 burstCount = 1000
+                    float3 emissionDirection = (0, -1, 0)
+
+                    def RealityKitStruct "mainEmitter"
+                    {
+                        float birthRate = 1000
+                        float4 endColorA = (1, 0.9137033, 0.1773241, 1)
+                        float sizeMultiplierAtEndOfLifespan = 0.01
+                        float4 startColorA = (1, 0.010710472, 0.010006971, 1)
+                        bool useEndColor = 1
+                        bool useEndColorRange = 0
+                        bool useStartColorRange = 0
+                    }
+
+                    def RealityKitStruct "spawnedEmitter"
+                    {
+                    }
+                }
+            }
+        }
+
+        over "geom"
+        {
+            float3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
     }
 }
 
